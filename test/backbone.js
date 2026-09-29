@@ -14,7 +14,7 @@ test('backbone', function (t) {
         
         var c = { console: console };
         vm.runInNewContext(src, c);
-        t.deepEqual(
+        t.same(
             Object.keys(backbone).sort(),
             Object.keys(c.require('backbone')).sort()
         );

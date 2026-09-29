@@ -1,3 +1,3 @@
-t.deepEqual(require('events'), {});
-t.deepEqual(require('bad id'), {});
-t.deepEqual(require('beep'), {});
+t.same(require('events'), {});
+t.same(require('bad id'), {});
+t.same(require('beep'), {});

@@ -19,9 +19,9 @@ test('function transform', { skip: flaky }, function (t) {
     ps.stderr.on('data', function (buf) { err += buf });
     
     ps.on('exit', function (code) {
-        t.notEqual(code, 0);
+        t.not(code, 0);
         var errorFile = path.resolve(__dirname, 'bin_tr_error', 'tr.js');
-        t.notEqual(err.indexOf('there was error'), -1, 'Error should contain error message')
-        t.notEqual(err.indexOf(errorFile), -1, 'Error should contain stack trace')
+        t.not(err.indexOf('there was error'), -1, 'Error should contain error message')
+        t.not(err.indexOf(errorFile), -1, 'Error should contain stack trace')
     });
 });

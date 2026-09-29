@@ -11,10 +11,10 @@ test('package', function (t) {
     
     var b = browserify(__dirname + '/pkg/main.js');
     b.on('package', function (pkg_) {
-        t.deepEqual(pkg_, pkg);
+        t.same(pkg_, pkg);
     });
     
     b.bundle(function (err) {
-        t.ifError(err);
+        t.error(err);
     });
 });

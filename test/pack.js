@@ -22,7 +22,7 @@ test('custom packer', function (t) {
     var b = browserify(__dirname + '/entry/main.js');
     b.pipeline.get('pack').splice(0,1, through.obj(function (row, enc, next) {
         t.equal(sources[row.id], row.source);
-        t.deepEqual(deps[row.id], row.deps);
+        t.same(deps[row.id], row.deps);
         this.push(row.id + '\n');
         next();
     }));

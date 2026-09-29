@@ -1,2 +1,2 @@
-t.deepEqual(require('./skip.js'), {});
-t.deepEqual(require('./double-skip/index'), {foo: 'bar'});
+t.same(require('./skip.js'), {});
+t.same(require('./double-skip/index'), {foo: 'bar'});

@@ -12,7 +12,7 @@ test('dependency events', function (t) {
     });
     
     b.bundle(function (err, src) {
-        t.deepEqual(deps.sort(cmp), [
+        t.same(deps.sort(cmp), [
             { id: 1, deps: { './one': 2, './two': 3 } },
             { id: 2, deps: {} },
             { id: 3, deps: {} }

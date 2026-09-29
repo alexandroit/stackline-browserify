@@ -9,6 +9,6 @@ test('yield', { skip: !hasObjectSpread }, function (t) {
     
     b.bundle(function (err, src) {
         t.error(err);
-        t.notEqual(src.indexOf('...b'), -1, 'passed through spread syntax')
+        t.not(src.indexOf('...b'), -1, 'passed through spread syntax')
     });
 });

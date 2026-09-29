@@ -18,12 +18,12 @@ test('syntax cache - valid', function (t) {
     Seq()
         .seq(function() { b.bundle(this); })
         .seq(function() {
-            t.deepEqual(b._syntaxCache, expectedCache);
+            t.same(b._syntaxCache, expectedCache);
             b._syntaxCache[cacheKey] = expectedCache[cacheKey] = 'beep';
             b.bundle(function(err, src) {
                 // if the cache worked, the "cacheKey"
                 // should not be reset to "true"
-                t.deepEqual(b._syntaxCache, expectedCache);
+                t.same(b._syntaxCache, expectedCache);
             });
         });
 });
@@ -36,12 +36,12 @@ test('syntax cache - skip invalid', function (t) {
     Seq()
         .seq(function() { b.bundle(this); })
         .catch(function(lastErr) {
-            t.deepEqual(b._syntaxCache, {});
-            t.similar(String(lastErr), /ParseError/);
+            t.same(b._syntaxCache, {});
+            t.match(String(lastErr), /ParseError/);
             b.bundle(function(err, src) {
-                t.deepEqual(b._syntaxCache, {});
-                t.similar(String(err), /ParseError/);
-                t.notEqual(lastErr, err, 'errors should be unique');
+                t.same(b._syntaxCache, {});
+                t.match(String(err), /ParseError/);
+                t.not(lastErr, err, 'errors should be unique');
             });
         });
 });

@@ -33,7 +33,7 @@ test('array require', function (t) {
 
         t.equal(c.require('defined')(undefined, true), true);
         t.equal(c.require('defined')(undefined, false), false);
-        t.deepEqual(c.require('subarg')(['-x', '3']), { x: 3, _: [] });
+        t.same(c.require('subarg')(['-x', '3']), { x: 3, _: [] });
     });
 });
 
@@ -52,7 +52,7 @@ test('array require opts', function (t) {
 
         t.equal(c.require('abc')(undefined, true), true);
         t.equal(c.require('abc')(undefined, false), false);
-        t.deepEqual(c.require('def')(['-x', '3']), { x: 3, _: [] });
+        t.same(c.require('def')(['-x', '3']), { x: 3, _: [] });
     });
 });
 

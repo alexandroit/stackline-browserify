@@ -25,8 +25,8 @@ test('noParse array', function (t) {
     b.on('dep', function(dep) { actual.push(dep.file); });
     b.bundle(function (err, src) {
         actual.sort();
-        t.ifError(err);
-        t.deepEqual(actual, expected);
+        t.error(err);
+        t.same(actual, expected);
     });
 });
 
@@ -53,7 +53,7 @@ test('noParse array with relative paths', function (t) {
     b.on('dep', function (dep) { actual.push(dep.file); });
     b.bundle(function (err, src) {
         actual.sort();
-        t.ifError(err);
-        t.deepEqual(actual, expected);
+        t.error(err);
+        t.same(actual, expected);
     });
 });

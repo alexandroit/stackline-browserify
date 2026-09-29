@@ -8,7 +8,7 @@ test('bundle', function (t) {
     b.bundle(function (err, src) {
         t.plan(3);
         
-        t.ifError(err);
+        t.error(err);
         t.ok(src.length > 0);
         
         var c = {
@@ -25,7 +25,7 @@ test('bundle', function (t) {
                 }, 10)
             })
             .seq(function (x,y,z) {
-                t.deepEqual([x,y,z], [100,200,300]);
+                t.same([x,y,z], [100,200,300]);
                 t.end();
             })
         ;

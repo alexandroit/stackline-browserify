@@ -1,2 +1,2 @@
-t.deepEqual(require('./skip.js'), {});
-t.deepEqual(require('./skip2.js'), {});
+t.same(require('./skip.js'), {});
+t.same(require('./skip2.js'), {});

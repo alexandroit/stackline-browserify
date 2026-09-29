@@ -23,6 +23,6 @@ test('error code', { skip: knownFailure }, function (t) {
     });
     
     ps.on('exit', function (code) {
-        t.notEqual(code, 0);
+        t.not(code, 0);
     });
 });

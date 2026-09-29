@@ -20,7 +20,7 @@ test('fullPaths enabled', function (t) {
 
     b.bundle(function (err, src) {
         unpack(src).forEach(function(dep) {
-            t.notEqual(deps.indexOf(dep.id), -1, 'full path name for dep.id');
+            t.not(deps.indexOf(dep.id), -1, 'full path name for dep.id');
         });
     });
 });

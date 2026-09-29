@@ -1,1 +1,1 @@
-t.deepEqual(require('./skip.js'), {});
+t.same(require('./skip.js'), {});

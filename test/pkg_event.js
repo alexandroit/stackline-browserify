@@ -14,11 +14,11 @@ test('package event', function (t) {
     
     var b = browserify(__dirname + '/pkg_event/main.js');
     b.on('package', function (pkg) {
-        t.deepEqual(pkg, expected.shift());
+        t.same(pkg, expected.shift());
     });
     
     b.bundle(function (err, src) {
-        t.ifError(err);
+        t.error(err);
         vm.runInNewContext(src, { console: { log: log } });
         function log (msg) { t.equal(msg, 555) }
     });
